@@ -27,7 +27,7 @@ SECRET_KEY = 'k0#q+z+ws$dr-(2j@i*g*7@^eddi$si(opjqxfeew^3-3jyglf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1","doggyadoption.herokuapp.com"]
+ALLOWED_HOSTS = ["doggyadoption.herokuapp.com"]
 
 
 # Application definition
@@ -127,11 +127,20 @@ USE_TZ = True
 # ://docs.djangoproject.com/en/3.1https/howto/static-files/
 
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",   
-]
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 MEDIA_URL="/media/"
-MEDIA_ROOT= BASE_DIR/'media'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL="/index"
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
