@@ -26,7 +26,7 @@ SECRET_KEY = 'k0#q+z+ws$dr-(2j@i*g*7@^eddi$si(opjqxfeew^3-3jyglf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","doggyadoption.herokuapp.com"]
 
 
 # Application definition
