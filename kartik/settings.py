@@ -3,7 +3,7 @@ from django.contrib.messages import constants as messages
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'k0#q+z+ws$dr-(2j@i*g*7@^eddi$si(opjqxfeew^3-3jyglf'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["doggyadoption.herokuapp.com"]
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
